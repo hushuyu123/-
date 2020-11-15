@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name= "testxslt-demo" basedir= "." >
+
+    <property name= "lib.dir" value= "lib" />
+
+    <path id= "test.classpath" >
+        <fileset dir= "${lib.dir}" includes= "*.jar" />
+    </path>
+
+    <target name= "transform" >
+
+        <xslt in= "E:/Second1/Java/eclipse/testxslt-demo/test-output/testng-results.xml" 
+        	style= "E:/Second1/Java/eclipse/testxslt-demo/test-output/testng-results.xsl"
+			out= "E:/Second1/Java/eclipse/testxslt-demo/test-output/index.html" 
+        	classpathref="test.classpath" processor="SaxonLiaison">
+            <param name= "testNgXslt.outputDir" 
+            	expression= "E:/Second1/Java/eclipse/testxslt-demo/test-output/" />
+
+        </xslt>
+
+    </target>
+
+
+</project>
+ 
