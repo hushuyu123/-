@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="auto2020/src"/>
+	<classpathentry kind="lib" path="auto2020/libs/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/commons-compress-1.19.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/log4j-api-2.11.2.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/log4j-core-2.11.2.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/poi-4.1.2.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/poi-ooxml-4.1.2.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/poi-ooxml-schemas-4.1.2.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/guice-4.2.2.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/freemarker.jar"/>
+	<classpathentry kind="lib" path="auto2020/libs/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="output" path="auto2020/bin"/>
+</classpath>

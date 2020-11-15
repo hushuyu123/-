@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="s1" verbose="1" >
+	<listeners> 
+		<listener class-name="com.webtest.freemarker.WebTestListener" /> 
+		
+	</listeners>
+
+	<test name="test1">
+		<classes>
+			<class name="com.webtest.demo.Admin_Login" />
+		</classes>
+	</test>
+	<test name="test2">
+		<classes>
+			<class name="com.webtest.demo.TestDemo" />
+		</classes>
+	</test>
+	
+</suite>
