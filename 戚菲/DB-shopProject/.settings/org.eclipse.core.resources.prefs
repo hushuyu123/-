@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 eclipse.preferences.version=1
 encoding//conf/config.properties=UTF-8
 encoding//src/com/webtest/dataprovider/ExcelDataProvider.java=UTF-8
 encoding//src/com/webtest/dataprovider/MysqlDataProvider.java=UTF-8
 encoding/<project>=UTF-8
 encoding/build.xml=UTF-8
+=======
+eclipse.preferences.version=1
+encoding//src/com/webtest/dataprovider/MysqlDataProvider.java=UTF-8
+>>>>>>> 701e65264fd61398875288292bcacefd03779345

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Saas_background_login"
+           tests="9"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="76.679">
+  <properties />
+  
+  
+            <testcase name="loginTest2" time="7.200" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest9" time="16.088" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest3" time="7.228" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest6" time="8.477" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest8" time="7.636" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest4" time="7.535" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest7" time="7.340" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest1" time="7.773" classname="com.xyc.test.LoginTest" />
+                <testcase name="loginTest5" time="7.402" classname="com.xyc.test.LoginTest" />
+      
+</testsuite>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="s1" verbose="1">
@@ -20,4 +21,20 @@
 		</classes>
 	</test>
 
+=======
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="s1" verbose="1" >
+	<listeners> 
+		<listener class-name="com.freemarker.WebTestListener" /> 
+		
+	</listeners>
+
+	<test name="test1">
+			<classes>
+			<class name="com.webtest.demo.Admin_Login" />
+		</classes>
+	</test>
+	
+>>>>>>> 701e65264fd61398875288292bcacefd03779345
 </suite>

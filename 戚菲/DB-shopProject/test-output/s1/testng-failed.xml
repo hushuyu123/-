@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [s1]">
@@ -30,3 +31,25 @@
     </classes>
   </test> <!-- test1(failed) -->
 </suite> <!-- Failed suite [s1] -->
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [s1]">
+  <listeners>
+    <listener class-name="com.freemarker.WebTestListener"/>
+  </listeners>
+  <test thread-count="5" name="test1(failed)">
+    <classes>
+      <class name="com.webtest.demo.Admin_Login">
+        <methods>
+          <include name="doAfterMethod"/>
+          <include name="demo6"/>
+          <include name="demo4"/>
+          <include name="demo1"/>
+          <include name="doBeforeClass"/>
+        </methods>
+      </class> <!-- com.webtest.demo.Admin_Login -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [s1] -->
+>>>>>>> 701e65264fd61398875288292bcacefd03779345
