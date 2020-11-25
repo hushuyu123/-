@@ -150,6 +150,8 @@ public class WebDriverEngine {
 		if (element != null) {
 			element.click();
 			this.pause(3000);
+		}else {
+			System.out.println("no found"+locator);
 		}
 	}
 
@@ -278,11 +280,11 @@ public class WebDriverEngine {
 	    }
 	    driver.switchTo().window(windows.get(i));
 	}
-	//ÓÒ¼ü
+	//ï¿½Ò¼ï¿½
 	public void rightClickMouse(String locator) throws InterruptedException {
 		action.contextClick(finder.findElement(locator)).perform();
 		}
-	//Tab¼ü
+	//Tabï¿½ï¿½
 	public void tapClick(){
 	
 		action.sendKeys(Keys.TAB).perform();;

@@ -1,15 +1,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="s1" verbose="1" >
-	<listeners> 
-		<listener class-name="com.freemarker.WebTestListener" /> 
-		
+<suite name="s1" verbose="1">
+	<listeners>
+		<listener class-name="com.freemarker.WebTestListener" />
+
 	</listeners>
 
 	<test name="test1">
-			<classes>
-			<class name="com.webtest.demo.Admin_Login" />
+		<classes>
+			<class name="com.webtest.demo.BaseInformation" />
+			<class name="com.webtest.demo.UserSet" />
+			<class name="com.webtest.demo.MoneySet" />
+			<class name="com.webtest.demo.PaySet" />
+			<class name="com.webtest.demo.DeliverySet" />
+			<class name="com.webtest.demo.MessageSet" />
+			<class name="com.webtest.demo.AreaSet" />
+			<class name="com.webtest.demo.AdminSet" />
+			<class name="com.webtest.demo.ServiceSet" />
 		</classes>
 	</test>
-	
+
 </suite>

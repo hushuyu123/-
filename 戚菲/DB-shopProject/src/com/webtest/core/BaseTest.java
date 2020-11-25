@@ -18,16 +18,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
 import org.testng.TestRunner;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
-
+import com.webtest.dataprovider.ExcelDataProvider;
 import com.webtest.utils.Log;
 import com.webtest.utils.ReadProperties;
 
+
 /**
- * author:lihuanzhen
+ * author:qifei
  *
  */
 
@@ -37,7 +41,8 @@ public class BaseTest {
 	public  WebDriverEngine webtest;
 	private WebDriver driver;
 	public String driverType;
-
+	
+	ExcelDataProvider excel = new ExcelDataProvider();
 	
 	
 
@@ -68,14 +73,8 @@ public class BaseTest {
 	}
 
 
-	/**
-	 * 
-	 *��ʼ�������
-	 * 
-	 */
 
-
-	@BeforeClass
+	@BeforeMethod
 	public void doBeforeClass() throws Exception {
 
 		driverType=ReadProperties.getPropertyValue("driverType");
@@ -83,15 +82,17 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		Log.info(driverType);
 		webtest = new WebDriverEngine(driver);
+		adminLogin();
 	
 	
 	
 	}
 
 
-	@AfterClass
-	public void doAfterMethod() {
+	@AfterMethod
+	public void doAfterMethod() throws InterruptedException {
 		if(this.driver != null){
+			
 			this.driver.quit();
 			}
 		Log.info("Quitted Browser");
@@ -104,6 +105,32 @@ public class BaseTest {
 	public WebDriver getDriver() {
         return driver;
     }
+	
+	public void adminLogin() throws IOException{
+		
+		String adminUrl = ReadProperties.getPropertyValue("admin_url");
+		webtest.open(adminUrl);
+		webtest.type("id=user_name", getExcel(0, 0));
+		webtest.type("id=user_passwd", getExcel(0, 1));
+		webtest.click("xpath=//button[contains(text(),'后台登录')]");
+	}
+	
+	public void baseLogin() throws IOException {
+	
+		String baseUrl = ReadProperties.getPropertyValue("base_url");
+		webtest.open(baseUrl);
+		
+		webtest.click("xpath=//a[contains(text(),'登录')]");
+		webtest.type("id=user_name", getExcel(1, 0));
+		webtest.type("id=user_password", getExcel(1, 1));
+		webtest.type("id=captcha_code", getExcel(1, 2));
+		webtest.click("xpath=//button[contains(text(),'会员登录')]");
+	}
+	
+	public String getExcel(int i,int j) throws IOException {
+		Object[][] result = excel.getTestDataByExcel("E:\\Demo\\DBShop\\DBShop.xlsx","Sheet1");
+		return (String) result[i][j];
+	}
 
 
 	

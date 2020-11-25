@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 11 10:51:57 CST 2020</td>
+<td>Started on:</td><td>Fri Nov 20 19:32:51 CST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>18 seconds (18195 ms)</td>
+<tr><td>Total time:</td><td>430 seconds (430023 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,81 +68,6 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.webtest.demo.Admin_Login.doAfterMethod()'><b>doAfterMethod</b><br>Test class: com.webtest.demo.Admin_Login</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;LAPTOP-UUTKFR9P&apos;, ip: &apos;192.168.137.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 82.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201026153733, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9640, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
-	at com.webtest.core.BaseTest.doAfterMethod(BaseTest.java:95)
-	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace426019904", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace426019904'><pre>org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
-System info: host: &apos;LAPTOP-UUTKFR9P&apos;, ip: &apos;192.168.137.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 82.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201026153733, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9640, moz:profile: C:\Users\lenovo\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
-	at com.webtest.core.BaseTest.doAfterMethod(BaseTest.java:95)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:63)
-	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:348)
-	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:302)
-	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
-	at java.util.ArrayList.forEach(Unknown Source)
-	at org.testng.TestRunner.privateRun(TestRunner.java:766)
-	at org.testng.TestRunner.run(TestRunner.java:587)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-	at org.testng.TestNG.runSuites(TestNG.java:1039)
-	at org.testng.TestNG.run(TestNG.java:1007)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -150,18 +75,15 @@ Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.demo1()'><b>demo1</b><br>Test class: com.webtest.demo.Admin_Login</td>
-<td><div><pre>java.lang.AssertionError: expected [2] but found [1]
-	at com.webtest.demo.Admin_Login.demo1(Admin_Login.java:30)
+<td title='com.webtest.demo.UserSet.demo1()'><b>demo1</b><br>Test class: com.webtest.demo.UserSet</td>
+<td><div><pre>java.lang.ArrayIndexOutOfBoundsException: 2
+	at com.webtest.core.BaseTest.getExcel(BaseTest.java:129)
+	at com.webtest.demo.UserSet.demo1(UserSet.java:36)
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1757317128", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1757317128'><pre>java.lang.AssertionError: expected [2] but found [1]
-	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:839)
-	at org.testng.Assert.assertEquals(Assert.java:849)
-	at com.webtest.demo.Admin_Login.demo1(Admin_Login.java:30)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace606365803", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace606365803'><pre>java.lang.ArrayIndexOutOfBoundsException: 2
+	at com.webtest.core.BaseTest.getExcel(BaseTest.java:129)
+	at com.webtest.demo.UserSet.demo1(UserSet.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -191,21 +113,18 @@ Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>40</td>
+<td>com.webtest.demo.UserSet@48503868</td></tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.demo4()'><b>demo4</b><br>Test class: com.webtest.demo.Admin_Login</td>
-<td><div><pre>java.lang.AssertionError: expected [2] but found [3]
-	at com.webtest.demo.Admin_Login.demo4(Admin_Login.java:42)
+<td title='com.webtest.demo.PaySet.demo3()'><b>demo3</b><br>Test class: com.webtest.demo.PaySet</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.webtest.core.WebDriverEngine.getText(WebDriverEngine.java:185)
+	at com.webtest.demo.PaySet.demo3(PaySet.java:66)
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1971783162", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1971783162'><pre>java.lang.AssertionError: expected [2] but found [3]
-	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:839)
-	at org.testng.Assert.assertEquals(Assert.java:849)
-	at com.webtest.demo.Admin_Login.demo4(Admin_Login.java:42)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1854577712", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1854577712'><pre>java.lang.NullPointerException
+	at com.webtest.core.WebDriverEngine.getText(WebDriverEngine.java:185)
+	at com.webtest.demo.PaySet.demo3(PaySet.java:66)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -235,21 +154,20 @@ Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>46</td>
+<td>com.webtest.demo.PaySet@184f6be2</td></tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.demo6()'><b>demo6</b><br>Test class: com.webtest.demo.Admin_Login</td>
-<td><div><pre>java.lang.AssertionError: expected [4] but found [7]
-	at com.webtest.demo.Admin_Login.demo6(Admin_Login.java:50)
+<td title='com.webtest.demo.DeliverySet.demo3()'><b>demo3</b><br>Test class: com.webtest.demo.DeliverySet</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at com.webtest.demo.DeliverySet.demo3(DeliverySet.java:73)
 	at java.util.ArrayList.forEach(Unknown Source)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1238616099", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1238616099'><pre>java.lang.AssertionError: expected [4] but found [7]
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1489997716", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1489997716'><pre>java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:839)
-	at org.testng.Assert.assertEquals(Assert.java:849)
-	at com.webtest.demo.Admin_Login.demo6(Admin_Login.java:50)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at com.webtest.demo.DeliverySet.demo3(DeliverySet.java:73)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -279,8 +197,8 @@ Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>21</td>
+<td>com.webtest.demo.DeliverySet@56aac163</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -290,25 +208,30 @@ Session ID: afa06e96-3e9a-47e2-a488-05cc1ac38c3e
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.demo2()'><b>demo2</b><br>Test class: com.webtest.demo.Admin_Login</td>
+<td title='com.webtest.demo.BaseInformation.demo1()'><b>demo1</b><br>Test class: com.webtest.demo.BaseInformation</td>
 <td></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>22</td>
+<td>com.webtest.demo.BaseInformation@10bbd20a</td></tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.demo3()'><b>demo3</b><br>Test class: com.webtest.demo.Admin_Login</td>
+<td title='com.webtest.demo.MoneySet.demo2()'><b>demo2</b><br>Test class: com.webtest.demo.MoneySet</td>
 <td></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>31</td>
+<td>com.webtest.demo.MoneySet@6895a785</td></tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.demo5()'><b>demo5</b><br>Test class: com.webtest.demo.Admin_Login</td>
+<td title='com.webtest.demo.AdminSet.demo2()'><b>demo2</b><br>Test class: com.webtest.demo.AdminSet</td>
 <td></td>
-<td>0</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>26</td>
+<td>com.webtest.demo.AdminSet@396f6598</td></tr>
 <tr>
-<td title='com.webtest.demo.Admin_Login.testLogin()'><b>testLogin</b><br>Test class: com.webtest.demo.Admin_Login</td>
+<td title='com.webtest.demo.MessageSet.demo5()'><b>demo5</b><br>Test class: com.webtest.demo.MessageSet</td>
 <td></td>
-<td>9</td>
-<td>com.webtest.demo.Admin_Login@1c3a4799</td></tr>
+<td>63</td>
+<td>com.webtest.demo.MessageSet@1f7030a6</td></tr>
+<tr>
+<td title='com.webtest.demo.AreaSet.demo6()'><b>demo6</b><br>Test class: com.webtest.demo.AreaSet</td>
+<td></td>
+<td>31</td>
+<td>com.webtest.demo.AreaSet@5a1c0542</td></tr>
 </table><p>
 </body>
 </html>

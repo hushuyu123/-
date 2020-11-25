@@ -3,15 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.webtest.demo.Admin_Login">
+      <class name="com.webtest.demo.BaseInformation">
         <methods>
+          <include name="demo9"/>
           <include name="doAfterMethod"/>
-          <include name="demo6"/>
-          <include name="demo4"/>
-          <include name="demo1"/>
           <include name="doBeforeClass"/>
         </methods>
-      </class> <!-- com.webtest.demo.Admin_Login -->
+      </class> <!-- com.webtest.demo.BaseInformation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,15 +6,27 @@
   </listeners>
   <test thread-count="5" name="test1(failed)">
     <classes>
-      <class name="com.webtest.demo.Admin_Login">
+      <class name="com.webtest.demo.PaySet">
         <methods>
+          <include name="demo3"/>
           <include name="doAfterMethod"/>
-          <include name="demo6"/>
-          <include name="demo4"/>
-          <include name="demo1"/>
           <include name="doBeforeClass"/>
         </methods>
-      </class> <!-- com.webtest.demo.Admin_Login -->
+      </class> <!-- com.webtest.demo.PaySet -->
+      <class name="com.webtest.demo.UserSet">
+        <methods>
+          <include name="doAfterMethod"/>
+          <include name="doBeforeClass"/>
+          <include name="demo1"/>
+        </methods>
+      </class> <!-- com.webtest.demo.UserSet -->
+      <class name="com.webtest.demo.DeliverySet">
+        <methods>
+          <include name="doAfterMethod"/>
+          <include name="demo3"/>
+          <include name="doBeforeClass"/>
+        </methods>
+      </class> <!-- com.webtest.demo.DeliverySet -->
     </classes>
   </test> <!-- test1(failed) -->
 </suite> <!-- Failed suite [s1] -->

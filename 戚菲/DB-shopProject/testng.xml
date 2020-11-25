@@ -1,15 +1,18 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" parallel="classes" >
 
-<suite name="s1" verbose="1" parallel="none">
-<listeners>
-		<listener class-name="com.webtest.core.WebTestListener"></listener>
-	</listeners>
-	<test name="t2" preserve-order="true">
-		<classes>
-			<class name="com.webtest.demo.XueliDemo"/>
-			
-			
-		</classes>
-	</test>
-
+  <test name="t1">
+    <classes>
+	  <class name="com.webtest.demo.BaseInformation"/>
+	  <class name="com.webtest.demo.UserSet"/>
+	  <!--<class name="com.webtest.demo.MoneySet"/>
+	  <class name="com.webtest.demo.PaySet"/>
+	  <class name="com.webtest.demo.DeliverySet"/>
+	  <class name="com.webtest.demo.MessageSet"/>
+	  <class name="com.webtest.demo.AreaSet"/>
+	  <class name="com.webtest.demo.AdminSet"/>
+	  <class name="com.webtest.demo.ServiveSet"/>-->
+    </classes>
+  </test>
 </suite>
