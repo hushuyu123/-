@@ -10,6 +10,8 @@
         <methods>
           <include name="demo3"/>
           <include name="doAfterMethod"/>
+          <include name="demo2"/>
+          <include name="demo5"/>
           <include name="demo4"/>
           <include name="demo1"/>
           <include name="doBeforeClass"/>
@@ -18,15 +20,42 @@
       <class name="com.webtest.demo.AdminSet">
         <methods>
           <include name="demo4"/>
+          <include name="demo1"/>
+          <include name="demo3"/>
           <include name="doAfterMethod"/>
+          <include name="demo5"/>
           <include name="doBeforeClass"/>
+          <include name="demo2"/>
         </methods>
       </class> <!-- com.webtest.demo.AdminSet -->
+      <class name="com.webtest.demo.AreaSet">
+        <methods>
+          <include name="doAfterMethod"/>
+          <include name="demo6"/>
+          <include name="demo4"/>
+          <include name="doBeforeClass"/>
+        </methods>
+      </class> <!-- com.webtest.demo.AreaSet -->
+      <class name="com.webtest.demo.DeliverySet">
+        <methods>
+          <include name="doAfterMethod"/>
+          <include name="demo1"/>
+          <include name="demo2"/>
+          <include name="demo3"/>
+          <include name="doBeforeClass"/>
+        </methods>
+      </class> <!-- com.webtest.demo.DeliverySet -->
       <class name="com.webtest.demo.ServiceSet">
         <methods>
           <include name="demo4"/>
+          <include name="demo5"/>
+          <include name="demo6"/>
           <include name="doAfterMethod"/>
+          <include name="demo3"/>
+          <include name="demo7"/>
+          <include name="demo1"/>
           <include name="doBeforeClass"/>
+          <include name="demo2"/>
         </methods>
       </class> <!-- com.webtest.demo.ServiceSet -->
       <class name="com.webtest.demo.UserSet">
@@ -39,19 +68,36 @@
       <class name="com.webtest.demo.BaseInformation">
         <methods>
           <include name="demo9"/>
+          <include name="demo4"/>
+          <include name="demo3"/>
+          <include name="demo6"/>
           <include name="demo11"/>
           <include name="doAfterMethod"/>
+          <include name="demo8"/>
           <include name="demo7"/>
           <include name="demo10"/>
           <include name="demo5"/>
+          <include name="demo1"/>
           <include name="doBeforeClass"/>
+          <include name="demo2"/>
         </methods>
       </class> <!-- com.webtest.demo.BaseInformation -->
+      <class name="com.webtest.demo.MoneySet">
+        <methods>
+          <include name="doAfterMethod"/>
+          <include name="demo2"/>
+          <include name="doBeforeClass"/>
+        </methods>
+      </class> <!-- com.webtest.demo.MoneySet -->
       <class name="com.webtest.demo.MessageSet">
         <methods>
           <include name="doAfterMethod"/>
+          <include name="demo2"/>
+          <include name="demo3"/>
           <include name="demo1"/>
+          <include name="demo4"/>
           <include name="doBeforeClass"/>
+          <include name="demo5"/>
         </methods>
       </class> <!-- com.webtest.demo.MessageSet -->
     </classes>

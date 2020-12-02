@@ -5,118 +5,127 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.seleniumhq.jetty9.security.authentication.LoginAuthenticator;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.webtest.core.BaseTest;
+import com.webtest.core.WebDriverEngine;
+import com.webtest.dataprovider.ExcelDataProvider;
+import com.webtest.dataprovider.NSDataProvider;
+import com.webtest.utils.Log;
+import com.webtest.utils.ReadProperties;
 
 public class ServiceSet extends BaseTest{
-
-	public void first() throws InterruptedException {
+	
+	@BeforeClass
+	public void login() throws IOException, InterruptedException {
+		adminLogin();
 		Thread.sleep(2000);
 		webtest.click("xpath=//a[contains(text(),'系统管理')]");
-		webtest.mouseToElement("xpath=//a[contains(text(),'在线客服设置')]");
+		webtest.mouseToElement("link=在线客服设置");
+		Thread.sleep(2000);
+		webtest.click("link=在线客服成员");
 	}
 	
-	@Test  //44.在线客服设置中添加客服
-	public void demo1() throws IOException, InterruptedException {
+	public void first() throws InterruptedException, IOException{
+		if(webtest.isTextPresent("系统管理")==false) {
+			adminLogin();
+		}
+		Thread.sleep(2000);
+		webtest.click("xpath=//a[contains(text(),'系统管理')]");
+		webtest.mouseToElement("link=在线客服设置");
+		Thread.sleep(2000);
+		webtest.click("link=在线客服成员");
+	}
+	
 
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服成员')]");
+	//44.在线客服设置中添加客服
+	@Test(priority = 1,dataProvider = "service1",dataProviderClass = NSDataProvider.class )  
+	public void demo1(String name,String account,String sort) throws IOException, InterruptedException, CloneNotSupportedException {
+
 		Thread.sleep(2000);
 		webtest.click("xpath=//a[contains(text(),'添加在线客服')]");
-		webtest.type("id=online_name", getExcel(27, 1));
+		webtest.type("id=online_name", name);
 		webtest.selectByIndex("id=online_group_id", 1);
 		webtest.selectByIndex("id=online_type", 2);
-		webtest.type("id=online_account",  getExcel(27, 2));
-		webtest.typeAndClear("id=online_sort",  getExcel(27, 3));
+		webtest.type("id=online_account",  account);
+		webtest.typeAndClear("id=online_sort", sort);
 		webtest.click("xpath=//button[@type='submit']");
-		
+		assertTrue(webtest.isTextPresent(name));
 	}
 	
-	@Test  //45.在线客服设置的在线客服成员中添加在线客服选择通讯工具‘腾讯QQ’
-	public void demo2() throws IOException, InterruptedException {
+	//45.在线客服设置的在线客服成员中添加在线客服选择通讯工具‘腾讯QQ’
+	@Test(priority=2 ,dataProvider = "service2",dataProviderClass = NSDataProvider.class)  
+	public void demo2(String name,String account,String sort) throws IOException, InterruptedException, CloneNotSupportedException {
+
 		
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服成员')]");
-		Thread.sleep(2000);
 		webtest.click("xpath=//a[contains(text(),'添加在线客服')]");
-		webtest.type("id=online_name", getExcel(28, 1));
+		webtest.type("id=online_name", name);
 		webtest.selectByIndex("id=online_group_id", 1);
 		webtest.selectByVisibleText("id=online_type", "腾讯QQ");
-		webtest.type("id=online_account",  getExcel(28, 2));
-		webtest.typeAndClear("id=online_sort",  getExcel(28, 3));
+		webtest.type("id=online_account",  account);
+		webtest.typeAndClear("id=online_sort",  sort);
 		webtest.click("xpath=//button[@type='submit']");
-		baseLogin();
 		
-		assertTrue(webtest.isTextPresent("客服2"));
 	}
 	
 	
-	@Test  //46.在线客服设置的在线客服成员中删除客服
+	@Test(priority=3)  //46.在线客服设置的在线客服成员中删除客服
 	public void demo3() throws IOException, InterruptedException {
 		
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服成员')]");
+
 		Thread.sleep(2000);
 		webtest.click("xpath=//td[contains(text(),'客服2')]/../td[7]/a[2]");
 		webtest.alertAccept();
 	}
 	
-	@Test  //47.在线客服设置的在线客服成员中在编辑基本信息中删除客服
+	
+	@Test(priority=4)    //47.在线客服设置的在线客服成员中在编辑基本信息中删除客服
 	public void demo4() throws IOException, InterruptedException {
 		
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服成员')]");
+
 		Thread.sleep(2000);
-		webtest.click("xpath=//td[contains(text(),'客服2')]/../td[7]/a");
+		webtest.click("xpath=//td[contains(text(),'客服1')]/../td[7]/a");
 		webtest.click("xpath=//td[contains(text(),'删除在线客服')]");
 		webtest.alertAccept();
 	}
 	
 	
-	@Test  //48.在线客服设置的在线客服成员中将客服的客服状态设置为禁用
+	@Test(priority=6)    //48.在线客服设置的在线客服成员中将客服的客服状态设置为禁用
 	public void demo5() throws IOException, InterruptedException {
 		
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服成员')]");
+
 		Thread.sleep(2000);
 		webtest.click("xpath=//td[contains(text(),'客服2')]/../td[7]/a");
 		webtest.click("xpath=//input[@value='0']");
 		webtest.click("xpath=//button[@type='submit']");
 		baseLogin();
 		assertFalse(webtest.isTextPresent("客服2"));
+		adminLogin();
+		
 	}
 	
-	
-	@Test  //49.在线客服设置的在线客服成员中编辑基本信息时不选择客服组名称
-	public void demo6() throws IOException, InterruptedException {
+	 //49.在线客服设置的在线客服成员中编辑基本信息时不选择客服组名称
+	@Test(dataProvider = "service3",dataProviderClass = NSDataProvider.class,priority = 5) 
+	public void demo6(String name,String account,String sort) throws IOException, InterruptedException {
 		
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服成员')]");
+
 		Thread.sleep(2000);
 		webtest.click("xpath=//a[contains(text(),'添加在线客服')]");
-		webtest.type("id=online_name", getExcel(29, 1));
+		webtest.typeAndClear("id=online_name", name);
 		webtest.selectByVisibleText("id=online_type", "腾讯QQ");
-		webtest.type("id=online_account", getExcel(29, 2));
-		webtest.typeAndClear("id=online_sort", getExcel(29, 3));
+		webtest.type("id=online_account",account);
+		webtest.typeAndClear("id=online_sort", sort);
 		webtest.click("xpath=//button[@type='submit']");
 		
 		assertTrue(webtest.isTextPresent("请选择客户组"));
 	}
 	
-	@Test  //50.在线客服设置的在线客服分组中将‘1’组的客服组状态禁用
-	public void demo7() throws IOException, InterruptedException {
-		
-		first();
-		webtest.click("xpath=//a[contains(text(),'在线客服分组')]");
-		Thread.sleep(2000);
-		webtest.click("xpath=//td[contains(text(),'1组')]/../td[6]/a");
-		webtest.click("xpath=//input[@value='0']");
-		webtest.click("xpath=//button[@type='submit']");
-		baseLogin();
-		assertFalse(webtest.isTextPresent("1组"));
-		
-	}
+
+	
+
 	
 	
 }

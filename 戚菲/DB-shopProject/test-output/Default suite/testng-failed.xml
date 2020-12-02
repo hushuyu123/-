@@ -1,35 +1,16 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.webtest.demo.BaseInformation">
+      <class name="com.webtest.demo.UserSet">
         <methods>
-          <include name="demo9"/>
+          <include name="login"/>
           <include name="doAfterMethod"/>
           <include name="doBeforeClass"/>
+          <include name="demo1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.webtest.demo.BaseInformation -->
+      </class> <!-- com.webtest.demo.UserSet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
-    <classes>
-      <class name="com.webtest.demo.Admin_Login">
-        <methods>
-          <include name="doAfterMethod"/>
-          <include name="demo6"/>
-          <include name="demo4"/>
-          <include name="demo1"/>
-          <include name="doBeforeClass"/>
-        </methods>
-      </class> <!-- com.webtest.demo.Admin_Login -->
-    </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
->>>>>>> 701e65264fd61398875288292bcacefd03779345

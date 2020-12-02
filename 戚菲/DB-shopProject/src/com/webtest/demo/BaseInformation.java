@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.webtest.core.BaseTest;
+import com.webtest.dataprovider.NSDataProvider;
 import com.webtest.utils.ReadProperties;
 
 
@@ -20,28 +21,34 @@ import com.webtest.utils.ReadProperties;
 
 public class BaseInformation extends BaseTest{
 	
+	@BeforeClass
+	public void login() throws IOException {
+		adminLogin();
+	}
 
-	public void first() throws InterruptedException {
+	public void first() throws InterruptedException, IOException {
+		if(webtest.isTextPresent("系统设置")==false) {
+			adminLogin();
+		}
 		Thread.sleep(2000);
 		webtest.click("xpath=//a[contains(text(),'系统管理')]");
 		webtest.click("xpath=//a[contains(text(),'系统设置')]");
 		
 	}
 	
-	@Test  //1.文件过大
-	public void demo1() throws InterruptedException, IOException {  
+	@Test(dataProvider = "base1",dataProviderClass = NSDataProvider.class)  //1.文件过大
+	public void demo1(String file) throws InterruptedException, IOException {  
 		first();
-		webtest.type("name=shop_logo", getExcel(2,1));
+		webtest.type("name=shop_logo", file);
 		webtest.click("xpath=//button[@type='submit']");
 		assertTrue(webtest.isTextPresent("最大允许'1.95MB'"));
 
-		
 	}
 	
-	@Test  //2.文件不是图片
-	public void demo2() throws InterruptedException, IOException { 
+	@Test(dataProvider = "base2",dataProviderClass = NSDataProvider.class)  //2.文件不是图片
+	public void demo2(String file) throws InterruptedException, IOException { 
 		first();
-		webtest.type("name=shop_logo",getExcel(3,1));
+		webtest.type("name=shop_logo",file);
 		webtest.click("xpath=//button[@type='submit']");
 		assertTrue(webtest.isTextPresent("扩展名不允许"));
 
@@ -76,34 +83,36 @@ public class BaseInformation extends BaseTest{
 		
 	}
 	
-	@Test  //5.开启邮件状态
-	public void demo5() throws IOException, InterruptedException { 
+	@Test(dataProvider = "base3",dataProviderClass = NSDataProvider.class)  //5.开启邮件状态
+	public void demo5(String mail,String name) throws IOException, InterruptedException { 
 		first();
 		webtest.click("xpath=//a[contains(text(),'邮件服务器')]");
-		webtest.click("id=email_service_state");
-		webtest.typeAndClear("id=send_from_mail",getExcel(4, 1));
-		webtest.typeAndClear("id=send_name", getExcel(4, 2));
-		webtest.click("xpath=//button[@type='submit']");
+		if(webtest.isChecked("id=email_service_state")==false) {
+			webtest.click("id=email_service_state");
+			webtest.typeAndClear("id=send_from_mail",mail);
+			webtest.typeAndClear("id=send_name", name);
+			webtest.click("xpath=//button[@type='submit']");
+		}
 	}
 	
 	
-	@Test  //6.邮件地址不正确
-	public void demo6() throws IOException, InterruptedException {
+	@Test(dataProvider = "base4",dataProviderClass = NSDataProvider.class)  //6.邮件地址不正确
+	public void demo6(String mail,String name) throws IOException, InterruptedException {
 		first();
 		webtest.click("xpath=//a[contains(text(),'邮件服务器')]");
 		webtest.click("id=email_service_state");
-		webtest.typeAndClear("id=send_from_mail", getExcel(5, 1));
-		webtest.typeAndClear("id=send_name", getExcel(5, 2));
+		webtest.typeAndClear("id=send_from_mail",mail);
+		webtest.typeAndClear("id=send_name", name);
 		webtest.click("xpath=//button[@type='submit']");
 		assertTrue(webtest.isTextPresent("请正确填写邮件地址"));
 	}
 	
-	@Test  //7.发件人名称为空
-	public void demo7() throws IOException, InterruptedException { 
+	@Test(dataProvider = "base5",dataProviderClass = NSDataProvider.class)  //7.发件人名称为空
+	public void demo7(String mail) throws IOException, InterruptedException { 
 		first();
 		webtest.click("xpath=//a[contains(text(),'邮件服务器')]");
 		webtest.click("id=email_service_state");
-		webtest.typeAndClear("id=send_from_mail",getExcel(6, 1));
+		webtest.typeAndClear("id=send_from_mail",mail);
 		webtest.typeAndClear("id=send_name","");
 		webtest.click("xpath=//button[@type='submit']");
 		assertTrue(webtest.isTextPresent("发件人名称不能为空"));
@@ -113,8 +122,10 @@ public class BaseInformation extends BaseTest{
 	public void demo8() throws IOException, InterruptedException { 
 		first();
 		webtest.click("xpath=//a[contains(text(),'验证码设置')]");
-		webtest.click("id=user_login_captcha");
-		webtest.click("xpath=//button[@type='submit']");
+		if(webtest.isChecked("id=user_login_captcha")) {
+			webtest.click("id=user_login_captcha");
+			webtest.click("xpath=//button[@type='submit']");
+		}
 		baseLogin();
 		assertFalse(webtest.isTextPresent("验证码"));
 	
@@ -124,8 +135,10 @@ public class BaseInformation extends BaseTest{
 	public void demo9() throws IOException, InterruptedException { 
 		first();
 		webtest.click("xpath=//a[contains(text(),'二维码设置')]");
-		webtest.click("id=shop_QRcode");
-		webtest.click("xpath=//button[@type='submit']");
+		if(webtest.isChecked("id=shop_QRcode")==false) {
+			webtest.click("id=shop_QRcode");
+			webtest.click("xpath=//button[@type='submit']");
+		}
 		baseLogin();
 		Thread.sleep(2000);
 		assertTrue(webtest.isElementPresent("xpath=//div[@class='header-info']/img"));
@@ -136,22 +149,26 @@ public class BaseInformation extends BaseTest{
 	public void demo10() throws IOException, InterruptedException { 
 		first();
 		webtest.click("xpath=//a[contains(text(),'订单设置')]");
-		webtest.click("id=user_shipping_date");
-		webtest.click("xpath=//button[@type='submit']");
+		if (webtest.isChecked("id=user_shipping_date")==false) {
+			webtest.click("id=user_shipping_date");
+			webtest.click("xpath=//button[@type='submit']");
+			
+		}
 		baseLogin();
 		webtest.click("id=J_miniCart");
 		webtest.click("xpath=//a[contains(text(),'去结算')]");
 		webtest.click("xpath=//input[@value='下一步']");
 		assertTrue(webtest.isTextPresent("只工作日送货 "));
 		
+		
 	}
 	
-	@Test  //11.在前台底部功能中添加图片和链接地址
-	public void demo11() throws IOException, InterruptedException { 
+	@Test(dataProvider = "base6",dataProviderClass = NSDataProvider.class)  //11.在前台底部功能中添加图片和链接地址
+	public void demo11(String file,String url) throws IOException, InterruptedException { 
 		first();
 		webtest.click("xpath=//a[contains(text(),'前台底部')]");
-		webtest.type("name=image_1",getExcel(7, 1));
-		webtest.type("name=image_url_1",getExcel(7, 2));
+		webtest.type("name=image_1",file);
+		webtest.type("name=image_url_1",url);
 		webtest.click("xpath=//button[@type='submit']");
 		webtest.click("xpath=//a[contains(text(),'前台底部')]");
 		assertFalse(webtest.isTextPresent("www.baidu.com"));
