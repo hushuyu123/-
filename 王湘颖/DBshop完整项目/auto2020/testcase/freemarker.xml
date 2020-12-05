@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="s1" verbose="1" >
+	<listeners> 
+		<listener class-name="com.webtest.freemarker.WebTestListener" /> 
+		
+	</listeners>
+
+	<test name="test1">
+		<classes>
+			<class name="com.webtest.demo.Test_Login" />
+		</classes>
+	</test>
+	<test name="test2">
+		<classes>
+			<class name="com.webtest.demo.Test_Reg" />
+		</classes>
+	</test>
+	<test name="test3">
+		<classes>
+			<class name="com.webtest.demo.Admin_Add" />
+		</classes>
+	</test>
+	<test name="test4">
+		<classes>
+			<class name="com.webtest.demo.Admin_Edit" />
+		</classes>
+	</test>
+	<test name="test5">
+		<classes>
+			<class name="com.webtest.demo.Admin_Set" />
+		</classes>
+	</test>
+	<test name="test6">
+		<classes>
+			<class name="com.webtest.demo.Admin_Delete" />
+		</classes>
+	</test>
+	
+</suite>
